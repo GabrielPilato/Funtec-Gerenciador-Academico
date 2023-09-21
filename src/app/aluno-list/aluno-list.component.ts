@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Aluno } from '../aluno';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './aluno-list.component.html',
   styleUrls: ['./aluno-list.component.css']
 })
-export class AlunoListComponent {
+export class AlunoListComponent implements OnInit{
 
   alunos: Aluno[] = [];
 
@@ -45,4 +45,7 @@ export class AlunoListComponent {
         this.getAlunos();
       })
     }
+
+    
+
 }
