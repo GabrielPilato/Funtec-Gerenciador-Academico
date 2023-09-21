@@ -16,7 +16,7 @@ export class AlunoService {
   getAlunosList(): Observable<Aluno[]> 
   {
     return this.HttpCliente.get<Aluno[]>(`${this.baseURL}`);
-  }
+  } 
 
   createAluno(aluno: Aluno): Observable<Object>
   {

@@ -3,9 +3,4 @@ export class Aluno {
     nome: string = "";
     cpf: string = "";
     dt_nascimento: Date = new Date();
-
-    constructor()
-    {
-
-    }
 }
