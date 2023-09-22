@@ -15,9 +15,9 @@
         <tr *ngFor="let aluno of alunos">
             <td>{{ aluno.nome }}</td>
             <td>{{ aluno.cpf }}</td>
-            <td>{{ aluno.dt_nascimento }}</td>
+            <td>{{ aluno.dt_nascimento | customDate}}</td>
             <td>
-                <button mat-raised-button color="primary" (click)="updateAluno(aluno.id)" >Atualizar</button>
+                <button mat-raised-button color="primary" (click)="updateAluno(aluno.id)">Atualizar</button>
                 <button mat-raised-button color="warn" (click)="deleteAluno(aluno.id)">Deletar</button>
                 <button mat-raised-button (click)="alunoDetails(aluno.id)">Visualizar</button>
             </td>

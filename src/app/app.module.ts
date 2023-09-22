@@ -8,10 +8,11 @@ import { UpdateAlunoComponent } from './update-aluno/update-aluno.component';
 import { AlunoDetailsComponent } from './aluno-details/aluno-details.component';
 import { AlunoListComponent } from './aluno-list/aluno-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { CustomDatePipe } from './custom.datepipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
     CreateAlunoComponent,
     UpdateAlunoComponent,
     AlunoDetailsComponent,
-    AlunoListComponent
+    AlunoListComponent,
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],
