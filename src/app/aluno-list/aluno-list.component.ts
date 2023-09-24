@@ -43,6 +43,11 @@ export class AlunoListComponent implements OnInit {
     })
   }
 
+  createAluno()
+  {
+    this.router.navigate(['create-aluno']);
+  }
+
 
 
 }

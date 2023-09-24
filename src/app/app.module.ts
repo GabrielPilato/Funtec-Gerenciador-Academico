@@ -13,6 +13,7 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { CustomDatePipe } from './custom.datepipe';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CustomDatePipe } from './custom.datepipe';
     MatNativeDateModule,
     FormsModule,
     HttpClientModule,
+    MatButtonModule
 
   ],
   providers: [{
