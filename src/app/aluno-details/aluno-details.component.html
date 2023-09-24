@@ -7,6 +7,6 @@
         <label> <b> CPF: </b></label> {{aluno.cpf}}
     </div>
     <div>
-        <label> <b> Data de Nascimento </b></label> {{aluno.dt_nascimento.toString()}}
+        <label> <b> Data de Nascimento </b></label> {{aluno.dt_nascimento | customDate: 'GMT'}}
     </div>
 </div>
