@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { CustomDatePipe } from './custom.datepipe';
 import { MatButtonModule } from '@angular/material/button';
+import { ProfessorListComponent } from './professor-list/professor-list.component';
+import { ProfessorDetailsComponent } from './professor-details/professor-details.component';
+import { CreateProfessorComponent } from './create-professor/create-professor.component';
+import { UpdateProfessorComponent } from './update-professor/update-professor.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { MatButtonModule } from '@angular/material/button';
     UpdateAlunoComponent,
     AlunoDetailsComponent,
     AlunoListComponent,
-    CustomDatePipe
+    CustomDatePipe,
+    ProfessorListComponent,
+    ProfessorDetailsComponent,
+    CreateProfessorComponent,
+    UpdateProfessorComponent
   ],
   imports: [
     BrowserModule,

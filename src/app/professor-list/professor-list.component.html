@@ -1,0 +1,27 @@
+<div class="row">
+    <h2> Lista de Professores </h2>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th style="text-align: center;">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let professor of professores">
+            <td>{{ professor.nome }}</td>
+            <td>{{ professor.email }}</td>
+            <td style="text-align: center;">
+                <button mat-raised-button color="primary" (click)="updateProfessor(professor.id)">Atualizar</button>
+                <button mat-raised-button color="warn" (click)="deleteProfessor(professor.id)">Deletar</button>
+                <button mat-raised-button (click)="professorDetails(professor.id)">Visualizar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div style="text-align: right;">
+    <button mat-button color="primary" (click)="createProfessor()">Cadastrar Professor</button>
+</div>

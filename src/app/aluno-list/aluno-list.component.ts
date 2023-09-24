@@ -14,10 +14,9 @@ export class AlunoListComponent implements OnInit {
   alunos: Aluno[] = [];
 
   constructor(private alunoService: AlunoService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit(): void {
-    var dateFormat: string = 'dd/MM/yyyy';
     this.getAlunos();
   }
 
@@ -47,7 +46,4 @@ export class AlunoListComponent implements OnInit {
   {
     this.router.navigate(['create-aluno']);
   }
-
-
-
 }
