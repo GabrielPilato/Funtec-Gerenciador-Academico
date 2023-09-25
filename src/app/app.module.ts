@@ -19,6 +19,13 @@ import { ProfessorDetailsComponent } from './professor-details/professor-details
 import { CreateProfessorComponent } from './create-professor/create-professor.component';
 import { UpdateProfessorComponent } from './update-professor/update-professor.component';
 import { CursoListComponent } from './curso-list/curso-list.component';
+import { CreateCursoComponent } from './create-curso/create-curso.component';
+import {MatInputModule} from '@angular/material/input';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { CursoDetailsComponent } from './curso-details/curso-details.component';
+import { UpdateCursoComponent } from './update-curso/update-curso.component';
+
 
 
 @NgModule({
@@ -33,7 +40,10 @@ import { CursoListComponent } from './curso-list/curso-list.component';
     ProfessorDetailsComponent,
     CreateProfessorComponent,
     UpdateProfessorComponent,
-    CursoListComponent
+    CursoListComponent,
+    CreateCursoComponent,
+    CursoDetailsComponent,
+    UpdateCursoComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +53,10 @@ import { CursoListComponent } from './curso-list/curso-list.component';
     MatNativeDateModule,
     FormsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    SelectButtonModule,
+    MatButtonToggleModule
 
   ],
   providers: [{

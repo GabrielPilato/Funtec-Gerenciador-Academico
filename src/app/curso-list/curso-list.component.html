@@ -18,7 +18,7 @@
     <tbody>
         <tr *ngFor="let curso of cursos">
             <td>{{ curso.nome_curso }}</td>
-            <td>{{ curso.descricao_curso }}</td>
+            <td>{{ curso.descricao_curso.length>30?( curso.descricao_curso | slice:0:30)+'...':(curso.descricao_curso) }}</td>
             <td>{{ curso.carga_horaria}}</td>
             <td>{{ curso.carga_horaria_diaria }}</td>
             <td>{{ curso.dt_inicio | customDate }}</td>

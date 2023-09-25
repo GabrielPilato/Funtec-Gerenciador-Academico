@@ -1,0 +1,24 @@
+<h3> Ver Detalhe do Aluno </h3>
+<div>
+    <div>
+        <label> <b> Nome: </b></label> {{curso.nome_curso}}
+    </div>
+    <div>
+        <label> <b> Descrição: </b></label> {{curso.descricao_curso}}
+    </div>
+    <div>
+        <label> <b> Carga Horária Total: </b></label> {{curso.carga_horaria + " hrs"}}
+    </div>
+    <div>
+        <label> <b> Carga Horária Diária: </b></label> {{curso.carga_horaria_diaria + " hrs"}}
+    </div>
+    <div>
+        <label> <b> Data de Início </b></label> {{curso.dt_inicio | customDate: 'GMT'}}
+    </div>
+    <div>
+        <label> <b> Data de Finalização </b></label> {{curso.dt_final | customDate: 'GMT'}}
+    </div>
+    <div>
+        <label> <b> Dias de realização do Curso </b></label> {{curso.dias_de_curso }}
+    </div>
+</div>

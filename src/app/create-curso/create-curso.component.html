@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Cadastrar Curso </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label> Nome</label>
+                        <input type="text" class="form-control" id="nome_curso" [(ngModel)]="curso.nome_curso"
+                            name="nome_curso">
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label> Descrição</label>
+                        <!-- <mat-form-field class="example-full-width"> -->
+                            <!-- <mat-label>Leave a comment</mat-label> -->
+                            <textarea matInput placeholder="Descrição do curso..." class="form-control" id="descricao_curso" [(ngModel)]="curso.descricao_curso"
+                            name="descricao_curso"></textarea>
+                         <!--</mat-form-field>--> 
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label> Carga Horaria Total</label>
+                        <input type="text" class="form-control" id="carga_horaria" [(ngModel)]="curso.carga_horaria"
+                            name="carga_horaria">
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label> Carga Horaria Diária</label>
+                        <input type="text" class="form-control" id="carga_horaria_diaria" [(ngModel)]="curso.carga_horaria_diaria"
+                            name="carga_horaria_diaria">
+                    </div>
+                    <br>
+
+                    
+                    <div class="form-group" style="text-align: center;">
+                    <mat-form-field class="example-form-field">
+                        <mat-label>Data de Início do Curso</mat-label>
+                        <input matInput [matDatepicker]="datepicker" class="form-control" id="dt_inicio" [(ngModel)]="curso.dt_inicio"
+                        name="dt_inicio">
+                        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker>
+                        </mat-datepicker>
+                      </mat-form-field>
+                      
+                      <mat-form-field class="example-form-field">
+                        <mat-label>Data de Fim do Curso</mat-label>
+                        <input matInput [matDatepicker]="picker" class="form-control" id="dt_final" [(ngModel)]="curso.dt_final"
+                            name="dt_final">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      </div>
+
+                    
+                    <div class="form-group" style="text-align: center;">
+                        <label> Dias que ocorrerâo as aulas do Curso</label>
+                        <br>
+                            <mat-button-toggle-group name="dias" aria-label="Ingredients" multiple [(ngModel)]="curso.dias_de_curso" style="flex-wrap: wrap;"> 
+                            <mat-button-toggle value=0 style="width: 25%;">Segunda-Feira</mat-button-toggle>
+                            <mat-button-toggle value=1 style="width: 25%;">Terça-Feira</mat-button-toggle>
+                            <mat-button-toggle value=2 style="width: 25%;">Quarta-Feira</mat-button-toggle>
+                            <mat-button-toggle value=3 style="width: 25%;">Quinta-Feira</mat-button-toggle>
+
+                            <mat-button-toggle value=4 style="width: 33%;">Sexta-Feira</mat-button-toggle>
+                            <mat-button-toggle value=5 style="width: 33%;">Sábado</mat-button-toggle>
+                            <mat-button-toggle value=6 style="width: 33%;">Domingo</mat-button-toggle>
+                            </mat-button-toggle-group>
+                    </div>
+                    <br/>
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

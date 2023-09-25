@@ -9,6 +9,9 @@ import { CreateProfessorComponent } from './create-professor/create-professor.co
 import { UpdateProfessorComponent } from './update-professor/update-professor.component';
 import { ProfessorDetailsComponent } from './professor-details/professor-details.component';
 import { CursoListComponent } from './curso-list/curso-list.component';
+import { CreateCursoComponent } from './create-curso/create-curso.component';
+import { CursoDetailsComponent } from './curso-details/curso-details.component';
+import { UpdateCursoComponent } from './update-curso/update-curso.component';
 
 const routes: Routes = [
   // Alunos
@@ -22,7 +25,11 @@ const routes: Routes = [
   { path: 'create-professor', component: CreateProfessorComponent },
   { path: 'update-professor/:id', component: UpdateProfessorComponent },
   { path: 'professor-details/:id', component: ProfessorDetailsComponent },
-  { path: 'cursos', component: CursoListComponent }
+  // Cursos
+  { path: 'cursos', component: CursoListComponent },
+  { path: 'create-curso', component: CreateCursoComponent},
+  { path: 'curso-details/:id', component: CursoDetailsComponent},
+  { path: 'update-curso/:id', component: UpdateCursoComponent}
 ];
 
 @NgModule({
