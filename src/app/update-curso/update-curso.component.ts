@@ -17,7 +17,9 @@ export class UpdateCursoComponent implements OnInit{
   constructor(private cursoService: CursoService,
     private router: Router,
     private route: ActivatedRoute) {
+      
       this.curso.dias_de_curso = this.curso.dias_de_curso.map(x => this.curso.dias_de_curso.indexOf(x));
+      console.log('curso.dias_de_cursos: ' + this.curso.dias_de_curso);
       
      }
 
@@ -26,8 +28,12 @@ export class UpdateCursoComponent implements OnInit{
 
     this.cursoService.getCursoById(this.id).subscribe(data => {
       this.curso = data;
+      console.log('curso.dias_de_cursos: no getById antes da conversao pra number' + this.curso.dias_de_curso);
       this.curso.dias_de_curso = this.curso.dias_de_curso.map(x => this.curso.dias_de_curso.indexOf(x))
+      console.log('curso.dias_de_cursos: no getById' + this.curso.dias_de_curso);
     }, erro => console.log(erro));
+
+    console.log('curso.dias_de_cursos no init: ' + this.curso.dias_de_curso);
 
   }
 
