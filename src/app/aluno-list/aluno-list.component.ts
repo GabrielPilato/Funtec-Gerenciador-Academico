@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Aluno } from '../aluno';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-aluno-list',

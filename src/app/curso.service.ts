@@ -16,8 +16,8 @@ export class CursoService {
     return this.httpClient.get<Curso[]>(`${this.baseURL}`);
   }
 
-  createCurso(professor: Curso): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, professor);
+  createCurso(curso: Curso): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, curso);
   }
 
   getCursoById(id: number): Observable<Curso> {

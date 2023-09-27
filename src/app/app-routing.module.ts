@@ -12,6 +12,10 @@ import { CursoListComponent } from './curso-list/curso-list.component';
 import { CreateCursoComponent } from './create-curso/create-curso.component';
 import { CursoDetailsComponent } from './curso-details/curso-details.component';
 import { UpdateCursoComponent } from './update-curso/update-curso.component';
+import { TurmaListComponent } from './turma-list/turma-list.component';
+import { CreateTurmaComponent } from './create-turma/create-turma.component';
+import { TurmaDetailsComponent } from './turma-details/turma-details.component';
+import { UpdateTurmaComponent } from './update-turma/update-turma.component';
 
 const routes: Routes = [
   // Alunos
@@ -27,9 +31,14 @@ const routes: Routes = [
   { path: 'professor-details/:id', component: ProfessorDetailsComponent },
   // Cursos
   { path: 'cursos', component: CursoListComponent },
-  { path: 'create-curso', component: CreateCursoComponent},
-  { path: 'curso-details/:id', component: CursoDetailsComponent},
-  { path: 'update-curso/:id', component: UpdateCursoComponent}
+  { path: 'create-curso', component: CreateCursoComponent },
+  { path: 'curso-details/:id', component: CursoDetailsComponent },
+  { path: 'update-curso/:id', component: UpdateCursoComponent },
+  // Turmas
+  { path: 'turmas', component: TurmaListComponent },
+  { path: 'create-turmas', component: CreateTurmaComponent },
+  { path: 'turma-details/:id', component: TurmaDetailsComponent },
+  { path: 'update-turma/:id', component: UpdateTurmaComponent }
 ];
 
 @NgModule({

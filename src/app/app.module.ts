@@ -20,12 +20,16 @@ import { CreateProfessorComponent } from './create-professor/create-professor.co
 import { UpdateProfessorComponent } from './update-professor/update-professor.component';
 import { CursoListComponent } from './curso-list/curso-list.component';
 import { CreateCursoComponent } from './create-curso/create-curso.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CursoDetailsComponent } from './curso-details/curso-details.component';
 import { UpdateCursoComponent } from './update-curso/update-curso.component';
-
+import { TurmaListComponent } from './turma-list/turma-list.component';
+import { CreateTurmaComponent } from './create-turma/create-turma.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { TurmaDetailsComponent } from './turma-details/turma-details.component';
+import { UpdateTurmaComponent } from './update-turma/update-turma.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { UpdateCursoComponent } from './update-curso/update-curso.component';
     CreateCursoComponent,
     CursoDetailsComponent,
     UpdateCursoComponent,
+    TurmaListComponent,
+    CreateTurmaComponent,
+    TurmaDetailsComponent,
+    UpdateTurmaComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +64,8 @@ import { UpdateCursoComponent } from './update-curso/update-curso.component';
     MatButtonModule,
     MatInputModule,
     SelectButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    DropdownModule
 
   ],
   providers: [{
