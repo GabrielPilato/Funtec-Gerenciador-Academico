@@ -46,7 +46,7 @@ const routes: Routes = [
   // Chamadas
   { path: 'chamadas', component: ChamadaListComponent },
   { path: 'create-chamadas', component: CreateChamadaComponent },
-  { path: 'update-chamada/:id', component: UpdateChamadaComponent },
+  { path: 'update-chamada/:idTurma/:idAluno/:dt_chamada', component: UpdateChamadaComponent },
   { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent }
 ];
 

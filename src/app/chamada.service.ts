@@ -25,7 +25,7 @@ export class ChamadaService {
     return this.httpClient.get<Chamada>(`${this.baseURL}/${id.turmaId}/${id.alunoId}/${id.dt_chamada}`);
   }
 
-  updateChamada(id: ChamadaId, chamada: Chamada): Observable<Object> {
+  updateChamada(id: string, chamada: Chamada): Observable<Object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, chamada);
   }
 

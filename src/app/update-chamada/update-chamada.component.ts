@@ -27,7 +27,9 @@ export class UpdateChamadaComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.id.alunoId = this.route.snapshot.params['idAluno'];
+    this.id.turmaId = this.route.snapshot.params['idTurma'];
+    this.id.dt_chamada = this.route.snapshot.params['dt_chamada'];
 
     this.chamadaService.getChamadaById(this.id).subscribe(data => {
       this.chamada = data;
@@ -52,13 +54,19 @@ export class UpdateChamadaComponent implements OnInit {
   }
 
   onSubmit() {
-    this.chamadaService.updateChamada(this.chamada.id, this.chamada).subscribe(data => {
+    this.chamadaService.updateChamada(this.chamada.naturalId, this.chamada).subscribe(data => {
       this.goToChamadaList();
     })
   }
 
   goToChamadaList() {
     this.router.navigate(['/chamadas']);
+  }
+
+  show()
+  {
+    console.log("Data ID: " + this.id.dt_chamada);
+    console.log("Data Chamada: " + this.chamada.id.dt_chamada);
   }
 
 }

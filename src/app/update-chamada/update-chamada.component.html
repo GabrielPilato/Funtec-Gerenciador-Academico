@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label> Selecionar a Turma</label>
                         <br>
-                        <p-dropdown [options]="turmas" [(ngModel)]="chamada.turma" optionLabel="id"
+                        <p-dropdown [options]="turmas" [(ngModel)]="chamada.turma" optionLabel="id" (onClick)="show()"
                             name="turmas"></p-dropdown>
                     </div>
 
@@ -23,7 +23,7 @@
                     <div class="form-group">
                         <label> Selecionar a Data da Chamada</label>
                         <br>
-                        <p-calendar [(ngModel)]="chamada.id.dt_chamada" [showTime]="true" [showIcon]="true"
+                        <p-calendar [(ngModel)]="id.dt_chamada" [showTime]="true" [showIcon]="true"
                             name="dt_chamada"></p-calendar>
                     </div>
 

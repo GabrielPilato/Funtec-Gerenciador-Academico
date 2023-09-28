@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chamada } from '../chamada';
 import { ChamadaService } from '../chamada.service';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
 import { ChamadaId } from '../chamadaId';
 
 @Component({
@@ -28,13 +28,13 @@ export class ChamadaListComponent implements OnInit {
     })
 
   }
-
+  
   chamadaDetails(idTurma: number, idAluno: number, dt_chamada: Date) {
     this.router.navigate(['chamada-details', idTurma, idAluno, dt_chamada]);
   }
 
-  updateChamada(id: ChamadaId) {
-    this.router.navigate(['update-chamada', id]);
+  updateChamada(idTurma: number, idAluno: number, dt_chamada: Data) {
+    this.router.navigate(['update-chamada', idTurma, idAluno, dt_chamada]);
   }
 
   deleteChamada(id: ChamadaId) {
