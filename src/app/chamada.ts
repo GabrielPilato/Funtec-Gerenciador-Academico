@@ -7,5 +7,6 @@ export class Chamada {
     turma: Turma = new Turma();
     aluno: Aluno = new Aluno();
     presenca: number = 0;
+    naturalId: string = "";
 
 }

@@ -38,6 +38,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { UpdateChamadaComponent } from './update-chamada/update-chamada.component';
 import { ChamadaDetailsComponent } from './chamada-details/chamada-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

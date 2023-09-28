@@ -29,7 +29,7 @@ export class ChamadaListComponent implements OnInit {
 
   }
 
-  chamadaDetails(idAluno: number, idTurma: number, dt_chamada: Date) {
+  chamadaDetails(idTurma: number, idAluno: number, dt_chamada: Date) {
     this.router.navigate(['chamada-details', idTurma, idAluno, dt_chamada]);
   }
 

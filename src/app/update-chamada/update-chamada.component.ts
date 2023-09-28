@@ -52,7 +52,7 @@ export class UpdateChamadaComponent implements OnInit {
   }
 
   onSubmit() {
-    this.chamadaService.updateChamada(this.id, this.chamada).subscribe(data => {
+    this.chamadaService.updateChamada(this.chamada.id, this.chamada).subscribe(data => {
       this.goToChamadaList();
     })
   }
