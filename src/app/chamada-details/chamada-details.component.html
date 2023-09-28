@@ -1,0 +1,27 @@
+<h3> Ver Detalhe da Chamada </h3>
+<div>
+    <div>
+        <label> <b> Data da Chamada: </b></label> {{chamada.id.dt_chamada | customDate}}
+    </div>
+    <div>
+        <label> <b> Nome do aluno: </b></label> {{chamada.aluno.nome}}
+    </div>
+    <div>
+        <label> <b> Presença: </b></label> {{chamada.presenca}}
+    </div>
+    <div>
+        <label> <b> Nome do professor Responsável: </b></label> {{chamada.turma.professor.nome}}
+    </div>
+    <div>
+        <label> <b> Nome do Curso: </b></label> {{chamada.turma.curso.nome_curso}}
+    </div>
+    <div>
+        <label> <b> Descrição do Curso: </b></label> {{chamada.turma.curso.descricao_curso}}
+    </div>
+    <div>
+        <label> <b> Carga horária Total do Curso: </b></label> {{chamada.turma.curso.carga_horaria}}
+    </div>
+    <div>
+        <label> <b> Carga horária Diária do Curso: </b></label> {{chamada.turma.curso.carga_horaria_diaria}}
+    </div>
+</div>

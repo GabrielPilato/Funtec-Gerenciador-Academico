@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +30,13 @@ import { CreateTurmaComponent } from './create-turma/create-turma.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { TurmaDetailsComponent } from './turma-details/turma-details.component';
 import { UpdateTurmaComponent } from './update-turma/update-turma.component';
-
+import { ChamadaListComponent } from './chamada-list/chamada-list.component';
+import { CreateChamadaComponent } from './create-chamada/create-chamada.component';
+import { ListboxModule } from 'primeng/listbox';
+import { CalendarModule } from 'primeng/calendar';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { UpdateChamadaComponent } from './update-chamada/update-chamada.component';
+import { ChamadaDetailsComponent } from './chamada-details/chamada-details.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +58,10 @@ import { UpdateTurmaComponent } from './update-turma/update-turma.component';
     CreateTurmaComponent,
     TurmaDetailsComponent,
     UpdateTurmaComponent,
+    ChamadaListComponent,
+    CreateChamadaComponent,
+    UpdateChamadaComponent,
+    ChamadaDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +75,10 @@ import { UpdateTurmaComponent } from './update-turma/update-turma.component';
     MatInputModule,
     SelectButtonModule,
     MatButtonToggleModule,
-    DropdownModule
+    DropdownModule,
+    ListboxModule,
+    CalendarModule,
+    InputNumberModule
 
   ],
   providers: [{
