@@ -6,6 +6,7 @@ import { ChamadaService } from '../chamada.service';
 import { TurmaService } from '../turma.service';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-create-chamada',
@@ -60,7 +61,8 @@ export class CreateChamadaComponent implements OnInit {
   }
 
   show() {
-    console.log(this.dt_chamada.toString());
+    const format = formatDate(this.dt_chamada, 'dd/MM/yyyy:HH:mm', 'en-US');
+    console.log(this.chamada.turma.id + this.chamada.aluno.id + "" + format);
   }
 
 }

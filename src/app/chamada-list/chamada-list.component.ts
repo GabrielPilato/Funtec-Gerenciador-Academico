@@ -30,8 +30,7 @@ export class ChamadaListComponent implements OnInit {
   }
 
   chamadaDetails(idAluno: number, idTurma: number, dt_chamada: Date) {
-    dt_chamada = new Date();
-    this.router.navigate(['chamada-details', idAluno, idTurma, this.formatDate(dt_chamada)]);
+    this.router.navigate(['chamada-details', idTurma, idAluno, dt_chamada]);
   }
 
   updateChamada(id: ChamadaId) {
