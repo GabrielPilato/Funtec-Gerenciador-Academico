@@ -37,7 +37,9 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { UpdateChamadaComponent } from './update-chamada/update-chamada.component';
 import { ChamadaDetailsComponent } from './chamada-details/chamada-details.component';
-
+import { ChamadaOptionsComponent } from './chamada-options/chamada-options.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AnimateModule } from 'primeng/animate';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { ChamadaDetailsComponent } from './chamada-details/chamada-details.compo
     ChamadaListComponent,
     CreateChamadaComponent,
     UpdateChamadaComponent,
-    ChamadaDetailsComponent
+    ChamadaDetailsComponent,
+    ChamadaOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,9 @@ import { ChamadaDetailsComponent } from './chamada-details/chamada-details.compo
     DropdownModule,
     ListboxModule,
     CalendarModule,
-    InputNumberModule
+    InputNumberModule,
+    MatIconModule,
+    AnimateModule
 
   ],
   providers: [{

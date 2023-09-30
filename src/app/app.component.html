@@ -1,4 +1,13 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm navbar-dark"
+    style="background: linear-gradient(90deg, rgba(255,255,255,1) 26%, rgba(76,190,232,1) 85%, rgba(76,89,162,1) 100%); margin-left: 10px;">
+    <ul class="navbar-nav" style="text-align: left;">
+        <img src="assets/img/funtec.png">
+
+    </ul>
+</nav>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background:#244878">
+</nav>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background:#427ECC">
     <ul class="navbar-nav">
         <li class="nav-item">
             <a routerLink="alunos" routerLinkActive="active" class="nav-link">Lista de alunos</a>
@@ -13,13 +22,11 @@
             <a routerLink="turmas" routerLinkActive="active" class="nav-link">Lista de Turmas</a>
         </li>
         <li class="nav-item">
-            <a routerLink="chamadas" routerLinkActive="active" class="nav-link">Lista de Chamadas</a>
+            <a routerLink="chamada-options" routerLinkActive="active" class="nav-link">Lista de Chamadas</a>
         </li>
-        
+
     </ul>
 </nav>
-
-<h1 class="text-center"> {{title}} </h1>
 <div class="container">
     <router-outlet></router-outlet>
 </div>

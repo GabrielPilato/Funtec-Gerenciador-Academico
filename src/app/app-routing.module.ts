@@ -20,6 +20,7 @@ import { ChamadaListComponent } from './chamada-list/chamada-list.component';
 import { CreateChamadaComponent } from './create-chamada/create-chamada.component';
 import { UpdateChamadaComponent } from './update-chamada/update-chamada.component';
 import { ChamadaDetailsComponent } from './chamada-details/chamada-details.component';
+import { ChamadaOptionsComponent } from './chamada-options/chamada-options.component';
 
 const routes: Routes = [
   // Alunos
@@ -47,7 +48,8 @@ const routes: Routes = [
   { path: 'chamadas', component: ChamadaListComponent },
   { path: 'create-chamadas', component: CreateChamadaComponent },
   { path: 'update-chamada/:idTurma/:idAluno/:dt_chamada', component: UpdateChamadaComponent },
-  { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent }
+  { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent },
+  { path: 'chamada-options', component: ChamadaOptionsComponent }
 ];
 
 @NgModule({
