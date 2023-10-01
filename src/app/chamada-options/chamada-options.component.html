@@ -1,9 +1,9 @@
 <div class="fade-in-image div-botoes">
     <div class="container">
-        <div class="row" style="font-size: 30px; color: #427ECC;">
+        <div class="row" style="font-size: 30px; color: #427ECC; ">
             <div class="col-sm">
                 <button mat-fab color="primary" aria-label="Example icon button with a delete icon"
-                    style="width: 300px; height: 300px;">
+                    style="width: 300px; height: 300px;" (click)="goToRealizarCadastro()">
                     <mat-icon>people</mat-icon>
                 </button>
                 <p>Cadastrar Alunos</p>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm">
                 <button mat-fab color="primary" aria-label="Example icon button with a delete icon"
-                    style="width: 300px; height: 300px;">
+                    style="width: 300px; height: 300px;" (click)="goToRealizarChamada()">
                     <mat-icon>edit_calendar</mat-icon>
 
                 </button>

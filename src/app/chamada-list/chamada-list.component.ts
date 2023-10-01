@@ -28,7 +28,7 @@ export class ChamadaListComponent implements OnInit {
     })
 
   }
-  
+
   chamadaDetails(idTurma: number, idAluno: number, dt_chamada: Date) {
     this.router.navigate(['chamada-details', idTurma, idAluno, dt_chamada]);
   }
@@ -37,7 +37,7 @@ export class ChamadaListComponent implements OnInit {
     this.router.navigate(['update-chamada', idTurma, idAluno, dt_chamada]);
   }
 
-  deleteChamada(id: ChamadaId) {
+  deleteChamada(id: string) {
     this.chamadaService.deleteChamada(id).subscribe(data => {
       console.log(data);
       this.getChamadas();

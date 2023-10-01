@@ -40,6 +40,10 @@ import { ChamadaDetailsComponent } from './chamada-details/chamada-details.compo
 import { ChamadaOptionsComponent } from './chamada-options/chamada-options.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AnimateModule } from 'primeng/animate';
+import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista-chamada.component';
+import { MatTableModule } from '@angular/material/table';
+import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,9 @@ import { AnimateModule } from 'primeng/animate';
     CreateChamadaComponent,
     UpdateChamadaComponent,
     ChamadaDetailsComponent,
-    ChamadaOptionsComponent
+    ChamadaOptionsComponent,
+    CreateListaChamadaComponent,
+    CreateCadastroAlunoTurmaComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +90,9 @@ import { AnimateModule } from 'primeng/animate';
     CalendarModule,
     InputNumberModule,
     MatIconModule,
-    AnimateModule
+    AnimateModule,
+    MatTableModule,
+    MatCheckboxModule
 
   ],
   providers: [{

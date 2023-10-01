@@ -8,5 +8,6 @@ export class Chamada {
     aluno: Aluno = new Aluno();
     presenca: number = 0;
     naturalId: string = "";
+    cadastro: boolean = false;
 
 }

@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 
 @Component({
-  selector: 'app-create-chamada',
-  templateUrl: './create-chamada.component.html',
-  styleUrls: ['./create-chamada.component.css']
+  selector: 'app-create-lista-chamada',
+  templateUrl: './create-lista-chamada.component.html',
+  styleUrls: ['./create-lista-chamada.component.css']
 })
-export class CreateChamadaComponent implements OnInit {
+export class CreateListaChamadaComponent implements OnInit {
 
   dt_chamada: Date = new Date();
   chamada: Chamada = new Chamada();
@@ -44,6 +44,7 @@ export class CreateChamadaComponent implements OnInit {
   }
 
   saveChamada() {
+
     this.chamadaService.createChamada(this.chamada.turma.id, this.chamada.aluno.id, this.dt_chamada, this.chamada).subscribe(data => {
       console.log(data);
       this.goToChamadaList();
@@ -63,5 +64,6 @@ export class CreateChamadaComponent implements OnInit {
     const format = formatDate(this.dt_chamada, 'dd/MM/yyyy:HH:mm', 'en-US');
     console.log(this.chamada.turma.id + this.chamada.aluno.id + "" + format);
   }
+
 
 }

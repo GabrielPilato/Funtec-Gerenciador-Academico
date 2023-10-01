@@ -15,4 +15,13 @@ export class ChamadaOptionsComponent {
     this.router.navigate(['chamadas']);
   }
 
+  goToRealizarChamada() {
+    this.router.navigate(['create-lista-chamadas']);
+  }
+
+
+  goToRealizarCadastro() {
+    this.router.navigate(['create-lista-chamadas-cadastro']);
+  }
+
 }

@@ -50,7 +50,6 @@ export class UpdateTurmaComponent implements OnInit {
 
   }
 
-
   onSubmit() {
     this.turmaService.updateCurso(this.id, this.turma).subscribe(data => {
       this.goToTurmasList();
