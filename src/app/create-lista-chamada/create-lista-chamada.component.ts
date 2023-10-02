@@ -149,21 +149,24 @@ export class CreateListaChamadaComponent implements OnInit {
     this.idAlunos = [];
 
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
+
       console.log("Printando pelo idAlunos")
+
       this.idAlunos[i] = this.chamadasCadastrados[i].id.alunoId;
+
       console.log(this.idAlunos[i]);
       let teste: number = this.idAlunos[i];
-      console.log(this.alunos[teste - 1]);
+      console.log(this.alunos[this.idAlunos[i]-1]);
     }
     console.log("ID dos alunos");
     console.log(this.idAlunos[0]);
-    console.log(this.alunos[this.idAlunos[0]]);
+    console.log(this.alunos);
     console.log("Chamadas cadastrados");
     console.log(this.chamadasCadastrados);
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
 
       console.log("presenca: ")
-      console.log(this.alunos[this.idAlunos[i]].presenca);
+      console.log(this.alunos[this.idAlunos[i] - 1].presenca);
     }
 
 

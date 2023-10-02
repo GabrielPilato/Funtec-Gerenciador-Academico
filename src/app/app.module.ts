@@ -32,7 +32,6 @@ import { TurmaDetailsComponent } from './turma-details/turma-details.component';
 import { UpdateTurmaComponent } from './update-turma/update-turma.component';
 import { ChamadaListComponent } from './chamada-list/chamada-list.component';
 import { CreateChamadaComponent } from './create-chamada/create-chamada.component';
-import { ListboxModule } from 'primeng/listbox';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { UpdateChamadaComponent } from './update-chamada/update-chamada.component';
@@ -41,7 +40,6 @@ import { ChamadaOptionsComponent } from './chamada-options/chamada-options.compo
 import { MatIconModule } from '@angular/material/icon';
 import { AnimateModule } from 'primeng/animate';
 import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista-chamada.component';
-import { MatTableModule } from '@angular/material/table';
 import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TableModule } from 'primeng/table';
@@ -87,12 +85,10 @@ import { TableModule } from 'primeng/table';
     SelectButtonModule,
     MatButtonToggleModule,
     DropdownModule,
-    ListboxModule,
     CalendarModule,
     InputNumberModule,
     MatIconModule,
     AnimateModule,
-    MatTableModule,
     MatCheckboxModule,
     TableModule
 
