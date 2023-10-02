@@ -3,5 +3,7 @@ export class Aluno {
     nome: string = "";
     cpf: string = "";
     dt_nascimento: Date = new Date();
+    checkado: boolean = false;
+    presenca: number = 0;
 
 }

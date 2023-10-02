@@ -6,6 +6,8 @@ import { ChamadaService } from '../chamada.service';
 import { TurmaService } from '../turma.service';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
+
 
 @Component({
   selector: 'app-create-cadastro-aluno-turma',
@@ -20,6 +22,7 @@ export class CreateCadastroAlunoTurmaComponent implements OnInit {
   turmas: Turma[] = [];
   alunos: Aluno[] = [];
 
+
   chamadasCadastrados: Chamada[] = [];
 
   idAlunos: number[] = [];
@@ -29,25 +32,38 @@ export class CreateCadastroAlunoTurmaComponent implements OnInit {
     private alunoService: AlunoService,
     private router: Router) {
 
+
+
   }
 
   ngOnInit(): void {
+
+
     this.getTurmas();
     this.getAlunos();
     this.getCadastrados();
+
+
+
     console.log(this.chamada.turma.id);
   }
 
+
   private getCadastrados() {
+
     this.chamadaService.getChamadaListCadastradosByTurma(this.chamada.turma.id).subscribe(data => {
       this.chamadasCadastrados = data;
+
     })
   }
 
   private getTurmas() {
     this.turmaService.getTurmaList().subscribe(data => {
       this.turmas = data;
+      this.chamada.turma.id = this.turmas[0].id;
+      this.getCadastrados();
     });
+
   }
 
   private getAlunos() {
@@ -58,8 +74,16 @@ export class CreateCadastroAlunoTurmaComponent implements OnInit {
   }
 
   saveChamada() {
-    this.chamadas[0].cadastro = true;
-    this.chamadaService.createListaChamada(this.chamada.turma.id, this.dt_chamada, this.idAlunos, this.chamadas).subscribe(data => {
+    for (let i = 0; i < this.idAlunos.length; i++) {
+      let chamada: Chamada = new Chamada();
+
+      chamada.cadastro = true;
+
+      this.chamadas.push(chamada);
+
+    }
+    const format = formatDate(this.dt_chamada, 'dd-MM-yyyy:HH:mm', 'en-US');
+    this.chamadaService.createListaChamada(this.chamada.turma.id, format, this.idAlunos, this.chamadas).subscribe(data => {
       console.log(data);
       this.goToChamadaList();
     })
@@ -84,19 +108,35 @@ export class CreateCadastroAlunoTurmaComponent implements OnInit {
   }
 
   show() {
+
     console.log(this.chamada.turma.id);
-    this.idAlunos = [];
-    this.getCadastrados();
+
   }
 
   addIdAluno(idAluno: number) {
+
     if (this.idAlunos.includes(idAluno)) {
       this.idAlunos.splice(this.idAlunos.indexOf(idAluno), 1);
+
     }
     else {
       this.idAlunos.push(idAluno);
+      this.chamadas.push
+
     }
     console.log(this.idAlunos);
+
   }
+
+  desCheckar() {
+    for (let i = 0; i < this.alunos.length; i++) {
+      this.alunos[i].checkado = false;
+    }
+    this.idAlunos = [];
+    this.chamadas = [];
+
+    this.getCadastrados();
+  }
+
 
 }

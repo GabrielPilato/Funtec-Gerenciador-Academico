@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Aluno } from '../aluno';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ export class AlunoListComponent implements OnInit {
   alunos: Aluno[] = [];
 
   constructor(private alunoService: AlunoService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getAlunos();
@@ -41,8 +41,7 @@ export class AlunoListComponent implements OnInit {
     })
   }
 
-  createAluno()
-  {
+  createAluno() {
     this.router.navigate(['create-aluno']);
   }
 }

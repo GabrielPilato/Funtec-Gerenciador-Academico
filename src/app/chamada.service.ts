@@ -25,7 +25,7 @@ export class ChamadaService {
     return this.httpClient.get<Chamada[]>(`${this.baseURL}/${idTurma}/cadastrados`);
   }
 
-  createListaChamada(idTurma: number, dt_chamada: Date, idAluno: number[], chamadaBody: Chamada[]) {
+  createListaChamada(idTurma: number, dt_chamada: string, idAluno: number[], chamadaBody: Chamada[]) {
     return this.httpClient.post(`${this.baseURL}/${idTurma}/${dt_chamada}/?idAlunos=${idAluno}`, chamadaBody);
   }
 

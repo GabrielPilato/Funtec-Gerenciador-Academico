@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Aluno } from '../aluno';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
@@ -9,33 +9,32 @@ import { Router } from '@angular/router';
   templateUrl: './create-aluno.component.html',
   styleUrls: ['./create-aluno.component.css']
 })
-export class CreateAlunoComponent implements OnInit{
+export class CreateAlunoComponent implements OnInit {
 
   aluno: Aluno = new Aluno();
 
-  constructor(private alunoService: AlunoService, 
-              private router: Router) {}
+  constructor(
+    private alunoService: AlunoService,
+    private router: Router) {
 
-  ngOnInit(): void
-  {
-                  
   }
 
-  saveAluno()
-  {
-    this.alunoService.createAluno(this.aluno).subscribe(data =>{
+  ngOnInit(): void {
+
+  }
+
+  saveAluno() {
+    this.alunoService.createAluno(this.aluno).subscribe(data => {
       console.log(data);
       this.goToAlunoList();
     })
   }
 
-  goToAlunoList()
-  {
+  goToAlunoList() {
     this.router.navigate(['/alunos']);
   }
 
-  onSubmit()
-  {
+  onSubmit() {
     console.log(this.aluno);
     this.saveAluno();
   }

@@ -44,6 +44,7 @@ import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista
 import { MatTableModule } from '@angular/material/table';
 import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     AnimateModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    TableModule
 
   ],
   providers: [{
