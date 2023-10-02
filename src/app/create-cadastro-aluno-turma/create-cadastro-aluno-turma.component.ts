@@ -90,7 +90,7 @@ export class CreateCadastroAlunoTurmaComponent implements OnInit {
   }
 
   goToChamadaList() {
-    this.router.navigate(['/chamadas']);
+    this.router.navigate(['/chamada-options']);
   }
 
   onSubmit() {

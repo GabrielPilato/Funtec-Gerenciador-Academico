@@ -73,24 +73,32 @@ export class CreateListaChamadaComponent implements OnInit {
 
   saveChamada() {
     //----------------------------------------------------------------------------------------------
+
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
       this.idAlunos[i] = this.chamadasCadastrados[i].id.alunoId;
     }
+
     console.log(this.idAlunos);
+
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
-      let chamada: Chamada = new Chamada();
 
-      chamada.cadastro = false;
+      this.chamadasCadastrados[i].cadastro = false;
+      
+      let aluno: Aluno = new Aluno();
+      aluno = this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id)!;
 
+      console.log("Printando o find aluno: ")
+      console.log(aluno);
 
-      chamada.presenca = this.alunos[this.idAlunos[i] - 1].presenca;
-      console.log(chamada);
-
-      this.chamadas.push(chamada);
+      this.chamadasCadastrados[i].presenca = aluno.presenca;
+      
+      console.log("Printando chamadas cadastrados atribuindo presença")
+      console.log(this.chamadasCadastrados[i]);
 
     }
+
     const format = formatDate(this.dt_chamada, 'dd-MM-yyyy:HH:mm', 'en-US');
-    this.chamadaService.createListaChamada(this.chamada.turma.id, format, this.idAlunos, this.chamadas).subscribe(data => {
+    this.chamadaService.createListaChamada(this.chamada.turma.id, format, this.idAlunos, this.chamadasCadastrados).subscribe(data => {
       console.log(data);
       this.goToChamadaList();
     })
@@ -150,46 +158,30 @@ export class CreateListaChamadaComponent implements OnInit {
 
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
 
+
       console.log("Printando pelo idAlunos")
 
       this.idAlunos[i] = this.chamadasCadastrados[i].id.alunoId;
 
-      console.log(this.idAlunos[i]);
-      let teste: number = this.idAlunos[i];
-      console.log(this.alunos[this.idAlunos[i]-1]);
-    }
-    console.log("ID dos alunos");
-    console.log(this.idAlunos[0]);
-    console.log(this.alunos);
-    console.log("Chamadas cadastrados");
-    console.log(this.chamadasCadastrados);
-    for (let i = 0; i < this.chamadasCadastrados.length; i++) {
+      console.log(this.idAlunos);
+      console.log("Printando chamadas cadastrados");
+      console.log(this.chamadasCadastrados);
+      let aluno: Aluno = new Aluno();
+      
+      console.log(this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id));
 
-      console.log("presenca: ")
-      console.log(this.alunos[this.idAlunos[i] - 1].presenca);
-    }
+      aluno = this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id)!;
 
+      console.log("Printando o find aluno: ")
+      console.log(aluno);
 
-
-    console.log("alunos");
-    console.log(this.alunos);
-    for (let i = 0; i < this.alunos.length; i++) {
-      console.log(this.alunos[i]);
-    }
-
-    for (let i = 0; i < this.chamadasCadastrados.length; i++) {
-      let chamada: Chamada = new Chamada();
-
-      chamada.cadastro = false;
-
-
-      chamada.presenca = this.alunos[i].presenca;
-      console.log("Chamada: ");
-      console.log(chamada);
-
-      this.chamadas.push(chamada);
+      this.chamadasCadastrados[i].presenca = aluno.presenca;
+      
+      console.log("Printando chamadas cadastrados atribuindo presença")
+      console.log(this.chamadasCadastrados[i]);
 
     }
+
 
 
 

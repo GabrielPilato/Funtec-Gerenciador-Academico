@@ -3,6 +3,7 @@ import { Chamada } from '../chamada';
 import { ChamadaService } from '../chamada.service';
 import { Data, Router } from '@angular/router';
 import { ChamadaId } from '../chamadaId';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-chamada-list',
@@ -30,7 +31,8 @@ export class ChamadaListComponent implements OnInit {
   }
 
   chamadaDetails(idTurma: number, idAluno: number, dt_chamada: Date) {
-    this.router.navigate(['chamada-details', idTurma, idAluno, dt_chamada]);
+    const format = formatDate(dt_chamada, 'dd-MM-yyyy:HH:mm', 'en-US');
+    this.router.navigate(['chamada-details', idTurma, idAluno, format]);
   }
 
   updateChamada(idTurma: number, idAluno: number, dt_chamada: Data) {
@@ -53,6 +55,18 @@ export class ChamadaListComponent implements OnInit {
     const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : (date.getMonth() + 1) + '';
     const year = date.getFullYear() + '';
     return `${day}-${month}-${year}`;
+  }
+
+  verificacao(cadastro: boolean) {
+    if (cadastro == true)
+    {
+      return false;
+    }
+
+    else
+    {
+      return true;
+    }
   }
 
 }
