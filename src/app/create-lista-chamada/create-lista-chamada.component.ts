@@ -36,6 +36,8 @@ export class CreateListaChamadaComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
+
     this.getTurmas();
     this.getAlunos();
     this.getCadastrados();

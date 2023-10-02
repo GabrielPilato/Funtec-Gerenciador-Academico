@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row" style="margin-top: 35px;">
     <div class="card col-md-6 offset-md-3 offset-md-3">
         <div class="row">
-            <h3 class="text-center"> Atualizar Aluno </h3>
+            <h2 class="text-center"> Atualizar Aluno </h2>
             <hr />
             <div class="card-body">
                 <form (ngSubmit)="onSubmit()">
@@ -10,23 +10,22 @@
                         <label> Nome </label>
                         <input type="text" class="form-control" id="nome" [(ngModel)]="aluno.nome" name="nome">
                     </div>
-
+                    <br>
                     <div class="form-group">
                         <label> CPF </label>
                         <input type="text" class="form-control" id="cpf" [(ngModel)]="aluno.cpf" name="cpf">
                     </div>
-
+                    <br>
                     <div class="form-group">
                         <label> Data de Nascimento</label>
-                        <input matInput [matDatepicker]="picker" class="form-control" id="dt_nascimento"
-                            [(ngModel)]="aluno.dt_nascimento" name="dt_nascimento"
-                            >
-                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
+                        <br>
+                        <p-calendar #calendario [(ngModel)]="aluno.dt_nascimento" dateFormat="dd/mm/yy"
+                        [showIcon]="true" name="dt_nascimento"></p-calendar>
                     </div>
                     <br />
-                    <button class="btn btn-success" type="submit">Submit</button>
-
+                    <div style="float: right;">
+                    <button class="btn btn-success" type="submit" style="background-color: rgba(29,112,183,1); border-color: rgba(29,112,183,1);">Atualizar</button>
+                    </div>
                 </form>
             </div>
         </div>
