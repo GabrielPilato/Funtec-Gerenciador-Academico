@@ -28,7 +28,7 @@ const routes: Routes = [
   // Alunos
   { path: 'alunos', component: AlunoListComponent },
   { path: 'create-aluno', component: CreateAlunoComponent },
-  //{path: '', redirectTo: 'alunos', pathMatch: 'full'},
+  {path: '', redirectTo: 'alunos', pathMatch: 'full'},
   { path: 'update-aluno/:id', component: UpdateAlunoComponent },
   { path: 'aluno-details/:id', component: AlunoDetailsComponent },
   // Professores

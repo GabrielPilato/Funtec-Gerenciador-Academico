@@ -1,3 +1,12 @@
 button {
     margin-right: 10px;
 }
+
+h2
+{
+    color: rgba(29,112,183,1);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
