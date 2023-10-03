@@ -38,22 +38,30 @@ export class BlocosTurmasComponent implements OnInit {
   }
 
   TelaEscolha(id: number){
-    Swal.fire({
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-secondary',
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
       icon: 'info',
       title: '<strong> <u> Opções: </u> </strong>',
       showCancelButton: true,
+      showCloseButton: true,
       confirmButtonText: 'Detalhes Da Turma',
       cancelButtonText: 'Realizar Chamada',
     }).then((result) => {
-
-      if(result.isConfirmed){
-        this.router.navigate(['turma-details', id]);
-      } else {
+      if (result.isConfirmed) {
+          this.router.navigate(['turma-details', id]);
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
         this.router.navigate(['create-lista-chamadas']);
       }
-      
-    });
-
+    })
   }
 
 
