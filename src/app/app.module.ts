@@ -42,7 +42,7 @@ import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista
 import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { BlocosTurmasComponent } from './blocos-turmas/blocos-turmas.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ChamadaDetailsComponent,
     ChamadaOptionsComponent,
     CreateListaChamadaComponent,
-    CreateCadastroAlunoTurmaComponent
+    CreateCadastroAlunoTurmaComponent,
+    BlocosTurmasComponent
   ],
   imports: [
     BrowserModule,

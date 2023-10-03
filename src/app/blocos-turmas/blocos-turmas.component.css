@@ -1,0 +1,48 @@
+.retangulo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.retanguloInvisivel {
+
+    margin: 30px;
+
+}
+
+.retanguloTurma {
+
+    background-color: #1d6fb7;
+    width: 200px;
+    height: 130px;
+    text-align: center;
+    
+    
+}
+
+.RetanguloEstadoTurma{
+    background-color: #4DBAE5;
+    width: 200px;
+    text-align: center;
+}
+
+.textoEdicaoUm{
+
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.textoEdicaoDois{
+
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+
+}

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="blocos-turmas.component.css" />
+
+<div class="retangulo">
+
+    <div class="retanguloInvisivel" *ngFor="let turma of turmas" >
+        <div class="retanguloTurma" a routerLink="turmas" (click)="TelaEscolha(turma.id)"> 
+
+            <p class = "textoEdicaoUm">
+                {{turma.nome_turma}}
+                <br>
+                Id: {{turma.id}}
+            </p>
+
+        </div>
+        <div class="RetanguloEstadoTurma">
+            
+            <p class = "textoEdicaoDois">
+                {{turma.curso.nome_curso}}
+            </p>
+        
+        </div>
+    </div>
+
+</div>

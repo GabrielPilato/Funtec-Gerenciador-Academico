@@ -23,12 +23,12 @@ import { ChamadaDetailsComponent } from './chamada-details/chamada-details.compo
 import { ChamadaOptionsComponent } from './chamada-options/chamada-options.component';
 import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista-chamada.component';
 import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
+import { BlocosTurmasComponent } from './blocos-turmas/blocos-turmas.component';
 
 const routes: Routes = [
   // Alunos
   { path: 'alunos', component: AlunoListComponent },
   { path: 'create-aluno', component: CreateAlunoComponent },
-  {path: '', redirectTo: 'alunos', pathMatch: 'full'},
   { path: 'update-aluno/:id', component: UpdateAlunoComponent },
   { path: 'aluno-details/:id', component: AlunoDetailsComponent },
   // Professores
@@ -53,7 +53,10 @@ const routes: Routes = [
   { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent },
   { path: 'chamada-options', component: ChamadaOptionsComponent },
   { path: 'create-lista-chamadas', component: CreateListaChamadaComponent},
-  { path: 'create-lista-chamadas-cadastro', component: CreateCadastroAlunoTurmaComponent}
+  { path: 'create-lista-chamadas-cadastro', component: CreateCadastroAlunoTurmaComponent},
+  //blocos
+  {path: 'blocos', component: BlocosTurmasComponent},
+  {path: '', redirectTo: 'blocos', pathMatch: 'full'},
 ];
 
 @NgModule({
