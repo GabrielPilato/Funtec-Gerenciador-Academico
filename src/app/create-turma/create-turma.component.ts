@@ -6,6 +6,7 @@ import { Curso } from '../curso';
 import { Professor } from '../professor';
 import { CursoService } from '../curso.service';
 import { ProfessorService } from '../professor.service';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-turma',
@@ -21,7 +22,8 @@ export class CreateTurmaComponent implements OnInit {
   constructor(private turmaService: TurmaService,
     private cursoService: CursoService,
     private professorService: ProfessorService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getCursos();
@@ -42,11 +44,21 @@ export class CreateTurmaComponent implements OnInit {
   }
 
   saveTurma() {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
+    if (!this.turma.curso|| !this.turma.professor || this.turma.nome_turma === "") {
 
+      this.snackBar.open("Favor preencher todas as informações corretamente", "", config);
+
+    }
+    else 
+    {
     this.turmaService.createTurma(this.turma.curso.id, this.turma.professor.id, this.turma).subscribe(data => {
       console.log(data);
+      this.snackBar.open("Turma criada com sucesso!", "", config);
       this.goToTurmasList();
     })
+    }
   }
 
   goToTurmasList() {

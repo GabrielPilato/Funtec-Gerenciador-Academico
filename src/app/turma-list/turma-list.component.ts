@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Turma } from '../turma';
 import { Router } from '@angular/router';
 import { TurmaService } from '../turma.service';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-turma-list',
@@ -13,7 +14,8 @@ export class TurmaListComponent implements OnInit {
   turmas: Turma[] = [];
 
   constructor(private turmaService: TurmaService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getTurmas();
@@ -35,7 +37,10 @@ export class TurmaListComponent implements OnInit {
   }
 
   deleteTurma(id: number) {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
     this.turmaService.deleteCurso(id).subscribe(data => {
+      this.snackBar.open("Turma excluída com sucesso!", "", config);
       console.log(data);
       this.getTurmas();
     })

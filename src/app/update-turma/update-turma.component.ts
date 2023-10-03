@@ -6,6 +6,7 @@ import { Curso } from '../curso';
 import { Professor } from '../professor';
 import { ProfessorService } from '../professor.service';
 import { CursoService } from '../curso.service';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-update-turma',
@@ -23,7 +24,8 @@ export class UpdateTurmaComponent implements OnInit {
     private professorService: ProfessorService,
     private cursoService: CursoService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -51,9 +53,19 @@ export class UpdateTurmaComponent implements OnInit {
   }
 
   onSubmit() {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
+    if (!this.turma.curso|| !this.turma.professor || this.turma.nome_turma === "") {
+
+      this.snackBar.open("Favor preencher todas as informações corretamente", "", config);
+
+    }else
+    {
     this.turmaService.updateCurso(this.id, this.turma).subscribe(data => {
+      this.snackBar.open("Turma atualizada com sucesso!", "", config);
       this.goToTurmasList();
     })
+    }
   }
 
   goToTurmasList() {

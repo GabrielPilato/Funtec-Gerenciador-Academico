@@ -7,6 +7,7 @@ import { Aluno } from '../aluno';
 import { TurmaService } from '../turma.service';
 import { AlunoService } from '../aluno.service';
 import { ChamadaId } from '../chamadaId';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-update-chamada',
@@ -20,6 +21,11 @@ export class UpdateChamadaComponent implements OnInit {
   turmas: Turma[] = [];
   alunos: Aluno[] = [];
 
+  naturalId: string = "";
+  dataFormatada: string = "";
+
+  data: Date = new Date();
+
   constructor(private chamadaService: ChamadaService,
     private turmaService: TurmaService,
     private alunoService: AlunoService,
@@ -29,10 +35,20 @@ export class UpdateChamadaComponent implements OnInit {
   ngOnInit(): void {
     this.id.alunoId = this.route.snapshot.params['idAluno'];
     this.id.turmaId = this.route.snapshot.params['idTurma'];
-    this.id.dt_chamada = this.route.snapshot.params['dt_chamada'];
+    this.id.dt_chamada = this.route.snapshot.params['dataFormatada'];
+    this.naturalId = this.route.snapshot.params['naturalId'];
+    this.dataFormatada = this.route.snapshot.params['dataFormatada'];
+    this.data = this.route.snapshot.params['dt_chamada'];
+
+    console.log("ID do aluno enviado: " + this.id.alunoId)
+    console.log("ID da turma enviada:" + this.id.turmaId)
+    console.log("Data da chamada enviada" + this.id.dt_chamada)
 
     this.chamadaService.getChamadaById(this.id).subscribe(data => {
       this.chamada = data;
+      console.log(this.chamada);
+      this.id.dt_chamada = new Date(this.data);
+
     }, erro => console.log(erro));
 
     this.getTurmas();
@@ -43,12 +59,20 @@ export class UpdateChamadaComponent implements OnInit {
   private getTurmas() {
     this.turmaService.getTurmaList().subscribe(data => {
       this.turmas = data;
+
+      this.turmaService.getTurmaById(this.id.turmaId).subscribe(data => {
+        this.chamada.turma = data;
+      })
     });
   }
 
   private getAluno() {
     this.alunoService.getAlunosList().subscribe(data => {
       this.alunos = data;
+
+      this.alunoService.getAlunobyId(this.id.alunoId).subscribe(data => {
+        this.chamada.aluno = data;
+      })
     })
 
   }
@@ -63,8 +87,7 @@ export class UpdateChamadaComponent implements OnInit {
     this.router.navigate(['/chamadas']);
   }
 
-  show()
-  {
+  show() {
     console.log("Data ID: " + this.id.dt_chamada);
     console.log("Data Chamada: " + this.chamada.id.dt_chamada);
   }

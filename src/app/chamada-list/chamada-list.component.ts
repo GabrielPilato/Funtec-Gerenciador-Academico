@@ -35,8 +35,9 @@ export class ChamadaListComponent implements OnInit {
     this.router.navigate(['chamada-details', idTurma, idAluno, format]);
   }
 
-  updateChamada(idTurma: number, idAluno: number, dt_chamada: Data) {
-    this.router.navigate(['update-chamada', idTurma, idAluno, dt_chamada]);
+  updateChamada(idTurma: number, idAluno: number, dt_chamada: Date, naturalId: string) {
+    const format = formatDate(dt_chamada, 'dd-MM-yyyy:HH:mm', 'en-US');
+    this.router.navigate(['update-chamada', idTurma, idAluno, dt_chamada, naturalId, format]);
   }
 
   deleteChamada(id: string) {

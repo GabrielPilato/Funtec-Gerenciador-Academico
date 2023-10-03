@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Professor } from '../professor';
 import { ProfessorService } from '../professor.service';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-professor-list',
@@ -13,7 +14,8 @@ export class ProfessorListComponent implements OnInit {
   professores: Professor[] = [];
 
   constructor(private professorService: ProfessorService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getProfessores();
@@ -35,8 +37,11 @@ export class ProfessorListComponent implements OnInit {
   }
 
   deleteProfessor(id: number) {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
     this.professorService.deleteProfessor(id).subscribe(data => {
       console.log(data);
+      this.snackBar.open("Professor excluído com sucesso!", "", config);
       this.getProfessores();
     })
   }

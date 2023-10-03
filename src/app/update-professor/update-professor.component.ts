@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Professor } from '../professor';
 import { ProfessorService } from '../professor.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-update-professor',
@@ -15,7 +16,8 @@ export class UpdateProfessorComponent implements OnInit {
 
   constructor(private professorService: ProfessorService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -28,9 +30,19 @@ export class UpdateProfessorComponent implements OnInit {
 
 
   onSubmit() {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
+    if (this.professor.email === "" || this.professor.nome === "" || this.professor.senha === "") {
+
+      this.snackBar.open("Favor preencher todas as informações corretamente", "", config);
+
+    }
+    else {
     this.professorService.updateProfessor(this.id, this.professor).subscribe(data => {
+      this.snackBar.open("Professor atualizado com sucesso!", "", config);
       this.goToProfessorList();
     })
+  }
   }
 
   goToProfessorList() {

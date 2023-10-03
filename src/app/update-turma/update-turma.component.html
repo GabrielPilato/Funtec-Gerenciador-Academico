@@ -12,14 +12,14 @@
                         <p-dropdown [options]="cursos" [(ngModel)]="turma.curso" optionLabel="nome_curso"
                             name="cursos"></p-dropdown>
                     </div>
-
+                    <br>
                     <div class="form-group">
                         <label> Selecionar o Professor</label>
                         <br>
                         <p-dropdown [options]="professores" [(ngModel)]="turma.professor" optionLabel="nome"
                             name="professores"></p-dropdown>
                     </div>
-
+                    <br>
                     <div class="form-group">
                         <label> Nome de Identificação da turma</label>
                         <input type="text" class="form-control" id="nome_turma" [(ngModel)]="turma.nome_turma"
@@ -28,8 +28,11 @@
 
 
                     <br />
-                    <button class="btn btn-success" type="submit">Submit</button>
-
+                    <div style="float: right">
+                        <button class="btn btn-success" type="submit"
+                            style="background-color: rgba(29,112,183,1); border-color: rgba(29,112,183,1);">Atualizar
+                            Turma</button>
+                    </div>
                 </form>
             </div>
         </div>

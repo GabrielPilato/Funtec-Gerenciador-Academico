@@ -24,14 +24,13 @@
                 <td>{{ chamada.aluno.nome}}</td>
                 <td>{{ chamada.presenca}}</td>
                 <td style="text-align: center;">
-                    <button mat-raised-button color="primary" (click)="updateChamada(chamada.id.turmaId, chamada.id.alunoId, chamada.id.dt_chamada)">Atualizar</button>
+                    <button mat-raised-button color="primary"
+                        (click)="updateChamada(chamada.id.turmaId, chamada.id.alunoId, chamada.id.dt_chamada, chamada.naturalId)">Atualizar</button>
                     <button mat-raised-button color="warn" (click)="deleteChamada(chamada.naturalId)">Deletar</button>
-                    <button mat-raised-button (click)="chamadaDetails(chamada.id.turmaId, chamada.id.alunoId, chamada.id.dt_chamada)">Visualizar</button>
+                    <button mat-raised-button
+                        (click)="chamadaDetails(chamada.id.turmaId, chamada.id.alunoId, chamada.id.dt_chamada)">Visualizar</button>
                 </td>
             </ng-container>
         </tr>
     </tbody>
 </table>
-<div style="text-align: right;">
-    <button mat-button color="primary" (click)="createChamadas()">Cadastrar Chamada</button>
-</div>

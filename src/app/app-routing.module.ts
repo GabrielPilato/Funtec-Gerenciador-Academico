@@ -49,14 +49,14 @@ const routes: Routes = [
   // Chamadas
   { path: 'chamadas', component: ChamadaListComponent },
   { path: 'create-chamadas', component: CreateChamadaComponent },
-  { path: 'update-chamada/:idTurma/:idAluno/:dt_chamada', component: UpdateChamadaComponent },
+  { path: 'update-chamada/:idTurma/:idAluno/:dt_chamada/:naturalId/:dataFormatada', component: UpdateChamadaComponent },
   { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent },
   { path: 'chamada-options', component: ChamadaOptionsComponent },
-  { path: 'create-lista-chamadas', component: CreateListaChamadaComponent},
-  { path: 'create-lista-chamadas-cadastro', component: CreateCadastroAlunoTurmaComponent},
+  { path: 'create-lista-chamadas', component: CreateListaChamadaComponent },
+  { path: 'create-lista-chamadas-cadastro', component: CreateCadastroAlunoTurmaComponent },
   //blocos
-  {path: 'blocos', component: BlocosTurmasComponent},
-  {path: '', redirectTo: 'blocos', pathMatch: 'full'},
+  { path: 'blocos', component: BlocosTurmasComponent },
+  { path: '', redirectTo: 'blocos', pathMatch: 'full' },
 ];
 
 @NgModule({

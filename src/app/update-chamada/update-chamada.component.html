@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row" style="margin-top: 35px;">
     <div class="card col-md-6 offset-md-3 offset-md-3">
         <div class="row">
-            <h3 class="text-center"> Cadastrar Chamada </h3>
+            <h2 class="text-center"> Atualizar Chamada </h2>
             <hr />
             <div class="card-body">
                 <form (ngSubmit)="onSubmit()">
@@ -9,22 +9,22 @@
                     <div class="form-group">
                         <label> Selecionar a Turma</label>
                         <br>
-                        <p-dropdown [options]="turmas" [(ngModel)]="chamada.turma" optionLabel="id" (onClick)="show()"
-                            name="turmas"></p-dropdown>
+                        <p-dropdown [options]="turmas" [(ngModel)]="chamada.turma" optionLabel="nome_turma" (onClick)="
+                            show()" name="turmas" [disabled]="true"></p-dropdown>
                     </div>
 
                     <div class="form-group">
                         <label> Selecionar o Aluno</label>
                         <br>
-                        <p-dropdown [options]="alunos" [(ngModel)]="chamada.aluno" optionLabel="nome"
-                            name="alunos"></p-dropdown>
+                        <p-dropdown [options]="alunos" [(ngModel)]="chamada.aluno" optionLabel="nome" name="alunos"
+                            [disabled]="true"></p-dropdown>
                     </div>
 
                     <div class="form-group">
                         <label> Selecionar a Data da Chamada</label>
                         <br>
-                        <p-calendar [(ngModel)]="id.dt_chamada" [showTime]="true" [showIcon]="true"
-                            name="dt_chamada"></p-calendar>
+                        <p-calendar [(ngModel)]="id.dt_chamada" [showTime]="true" [showIcon]="true" name="dt_chamada"
+                            dateFormat="dd/mm/yy" [disabled]="true"></p-calendar>
                     </div>
 
                     <div class="form-group">
@@ -35,8 +35,10 @@
                     </div>
 
                     <br />
-                    <button class="btn btn-success" type="submit">Submit</button>
-
+                    <div style="float: right;">
+                        <button class="btn btn-success" type="submit"
+                            style="background-color: rgba(29,112,183,1); border-color: rgba(29,112,183,1);">Atualizar</button>
+                    </div>
                 </form>
             </div>
         </div>

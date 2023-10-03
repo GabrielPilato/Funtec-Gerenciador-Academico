@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Aluno } from '../aluno';
 import { AlunoService } from '../aluno.service';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-aluno-list',
@@ -13,7 +14,8 @@ export class AlunoListComponent implements OnInit {
   alunos: Aluno[] = [];
 
   constructor(private alunoService: AlunoService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAlunos();
@@ -35,9 +37,12 @@ export class AlunoListComponent implements OnInit {
   }
 
   deleteAluno(id: number) {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
     this.alunoService.deleteAluno(id).subscribe(data => {
       console.log(data);
       this.getAlunos();
+      this.snackBar.open("Aluno excluído com sucesso!", "", config);
     })
   }
 

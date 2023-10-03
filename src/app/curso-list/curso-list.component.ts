@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Curso } from '../curso';
 import { CursoService } from '../curso.service';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-curso-list',
@@ -13,7 +14,8 @@ export class CursoListComponent implements OnInit {
   cursos: Curso[] = [];
 
   constructor(private cursoService: CursoService,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getCursos();
@@ -35,7 +37,10 @@ export class CursoListComponent implements OnInit {
   }
 
   deleteCurso(id: number) {
+    let config = new MatSnackBarConfig();
+    config.duration = 4000;
     this.cursoService.deleteCurso(id).subscribe(data => {
+      this.snackBar.open("Curso excluído com sucesso!", "", config);
       console.log(data);
       this.getCursos();
     })
