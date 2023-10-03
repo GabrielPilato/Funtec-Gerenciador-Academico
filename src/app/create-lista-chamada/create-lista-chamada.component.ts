@@ -67,7 +67,7 @@ export class CreateListaChamadaComponent implements OnInit {
     this.alunoService.getAlunosList().subscribe(data => {
       this.alunos = data;
       for (let i = 0; i < this.alunos.length; i++) {
-        this.alunos[i].presenca = 5;
+        this.alunos[i].presenca = this.turmas[0].curso.carga_horaria_diaria;
       }
     })
 
@@ -145,7 +145,7 @@ export class CreateListaChamadaComponent implements OnInit {
 
   }
 
-  desCheckar() {
+  desCheckar(turma: Turma) {
     for (let i = 0; i < this.alunos.length; i++) {
       this.alunos[i].checkado = false;
     }
@@ -153,6 +153,13 @@ export class CreateListaChamadaComponent implements OnInit {
     this.chamadas = [];
 
     this.getCadastrados();
+
+    
+
+    for (let i = 0; i < this.alunos.length; i++) {
+      this.alunos[i].presenca = turma.curso.carga_horaria_diaria;
+    }
+
   }
 
   showids() {

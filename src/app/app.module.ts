@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateAlunoComponent } from './create-aluno/create-aluno.component';
@@ -41,6 +41,8 @@ import { AnimateModule } from 'primeng/animate';
 import { CreateListaChamadaComponent } from './create-lista-chamada/create-lista-chamada.component';
 import { CreateCadastroAlunoTurmaComponent } from './create-cadastro-aluno-turma/create-cadastro-aluno-turma.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -87,7 +89,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     InputNumberModule,
     MatIconModule,
     AnimateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule
 
   ],
   providers: [{

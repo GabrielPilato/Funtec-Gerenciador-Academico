@@ -10,7 +10,7 @@
                         <label> Selecionar a Turma</label>
                         <br>
                         <p-dropdown [options]="turmas" [(ngModel)]="chamada.turma" optionLabel="nome_turma" name="nome"
-                            (onClick)="show()" (onChange)="desCheckar()"></p-dropdown>
+                            (onClick)="show()" (onChange)="desCheckar(chamada.turma)"></p-dropdown>
                     </div>
                     <br>
                     <div class="form-group">
@@ -43,10 +43,11 @@
                     </table>
 
                     <br />
-                    <button class="btn btn-success" type="submit">Submit</button>
-
+                    <div style="float: right;">
+                        <button class="btn btn-success" type="submit">Salvar Chamada</button>
+                    </div>
                 </form>
-               
+
             </div>
         </div>
     </div>
