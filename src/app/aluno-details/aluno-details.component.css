@@ -1,0 +1,20 @@
+h2 {
+    color: rgba(29, 112, 183, 1);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.container {
+    float: right;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+label {
+    color: rgba(29, 112, 183, 1);
+}

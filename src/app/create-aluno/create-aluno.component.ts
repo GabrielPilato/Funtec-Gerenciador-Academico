@@ -33,6 +33,9 @@ export class CreateAlunoComponent implements OnInit {
       this.snackBar.open("Favor preencher todas as informações corretamente", "", config);
 
     }
+    else if (this.aluno.cpf.length < 11) {
+      this.snackBar.open("Favor preencher CPF corretamente", "", config);
+    }
     else {
       this.alunoService.createAluno(this.aluno).subscribe(data => {
         console.log(data);

@@ -1,23 +1,48 @@
-<h3> Ver Detalhe da Turma </h3>
-<div>
+<h2> Ver Detalhe da Turma </h2>
+<div class="container" style="padding-top: 30px;">
     <div>
-        <label> <b> Identificador da Turma: </b></label> {{turma.id}}
-    </div>
-    <div>
-        <label> <b> Nome do Curso da Turma: </b></label> {{turma.curso.nome_curso}}
-    </div>
-    <div>
-        <label> <b> Descrição do Curso da Turma: </b></label> {{turma.curso.descricao_curso}}
-    </div>
-    <div>
-        <label> <b> Nome do professor responsável pela Turma: </b></label> {{turma.professor.nome}}
-    </div>
-</div>
-<div *ngFor="let cadastrados of chamadasCadastrados">
-    {{cadastrados.aluno.nome}}
         <div>
-
+            <label> <b> Identificador da Turma: </b></label> {{turma.id}}
         </div>
-        {{cadastrados.presenca}}
+        <div>
+            <label> <b> Identificador da Turma: </b></label> {{turma.nome_turma}}
+        </div>
+        <div>
+            <label> <b> Nome do Curso da Turma: </b></label> {{turma.curso.nome_curso}}
+        </div>
+        <div>
+            <label> <b> Descrição do Curso da Turma: </b></label> {{turma.curso.descricao_curso}}
+        </div>
+        <div>
+            <label> <b> Nome do professor responsável pela Turma: </b></label> {{turma.professor.nome}}
+        </div>
+    </div>
     <br>
+    <label style="font-size: 25px;"><b> Relatório de Alunos cadastrados nesta turma</b></label>
+
+    <div style="margin-top: 20px;">
+        <label><b>Carga Horária Total do Curso: </b></label>
+        {{turma.curso.carga_horaria}}
+        <br>
+        <label><b>Carga Horária Diária do Curso: </b></label>
+        {{turma.curso.carga_horaria_diaria}}
+        <br>
+        <label><b>Mínimo de presença para aprovação: </b></label>
+        {{turma.curso.carga_horaria * 0.75}}
+    </div>
+
+    <div *ngFor="let cadastrados of chamadasCadastrados" style="margin-top: 20px; padding-bottom: 30px;">
+        <label><b>Nome do aluno: </b></label>
+        {{cadastrados.aluno.nome}}
+        <br>
+        <label><b>CPF do aluno: </b></label>
+        {{cadastrados.aluno.cpf}}
+        <br>
+        <label><b>Presença total do aluno: </b></label>
+        {{cadastrados.presenca}}
+        <br>
+        <label><b>Situação do aluno: </b></label>
+        <b>{{cadastrados.presenca >= (turma.curso.carga_horaria * 0.75) ? 'Aprovado' : 'Reprovado'}}</b>
+        <br>
+    </div>
 </div>

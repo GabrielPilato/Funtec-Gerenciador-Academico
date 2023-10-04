@@ -13,7 +13,9 @@
                     <br>
                     <div class="form-group">
                         <label> CPF</label>
-                        <input type="text" class="form-control" id="cpf" [(ngModel)]="aluno.cpf" name="cpf">
+                        <input type="text" class="form-control" id="cpf" [(ngModel)]="aluno.cpf" name="cpf"
+                            maxlength="11" minlength="11" placeholder="12312312310">
+                        <p style="padding-left: 10px; opacity: 50%;">Favor digitar somente os numeros do CPF</p>
                     </div>
                     <br>
                     <div class="form-group">
@@ -25,7 +27,8 @@
 
                     <br />
                     <div style="float: right;">
-                    <button class="btn btn-success" type="submit" style="background-color: rgba(29,112,183,1); border-color: rgba(29,112,183,1);">Cadastrar</button>
+                        <button class="btn btn-success" type="submit"
+                            style="background-color: rgba(29,112,183,1); border-color: rgba(29,112,183,1);">Cadastrar</button>
                     </div>
                 </form>
             </div>
