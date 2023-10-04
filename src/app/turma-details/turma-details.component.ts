@@ -48,7 +48,7 @@ export class TurmaDetailsComponent implements OnInit {
 
         for (let i = 0; i < this.chamadasCadastrados.length; i++) {
           this.chamadasCadastrados[i].aluno.cpf = this.chamadasCadastrados[i].aluno.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-          console.log(this.chamadasCadastrados[i].aluno.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4"));
+
           this.chamadaService.getChamadaByAluno(this.chamadasCadastrados[i].aluno.id).subscribe(data => {
 
             for (let j = 0; j < data.length; j++) {
@@ -57,14 +57,14 @@ export class TurmaDetailsComponent implements OnInit {
             };
 
             for (let i = 0; i < this.chamadasCadastrados.length; i++) {
-              console.log("entra aq?")
+
               let contador: number = 0;
               console.log(this.listaChamadas.length)
               for (let j = 0; j < this.listaChamadas.length; j++) {
 
                 console.log("começando for do aluno: ")
 
-                if (this.chamadasCadastrados[i].aluno.id == this.listaChamadas[j].aluno.id) {
+                if (this.chamadasCadastrados[i].aluno.id == this.listaChamadas[j].aluno.id && this.chamadasCadastrados[i].turma.id == this.listaChamadas[j].turma.id) {
                   contador = contador + this.listaChamadas[j].presenca;
 
 
