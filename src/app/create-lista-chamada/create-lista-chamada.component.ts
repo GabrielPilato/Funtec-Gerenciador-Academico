@@ -5,7 +5,7 @@ import { Aluno } from '../aluno';
 import { ChamadaService } from '../chamada.service';
 import { TurmaService } from '../turma.service';
 import { AlunoService } from '../aluno.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 
 @Component({
@@ -14,6 +14,8 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./create-lista-chamada.component.css']
 })
 export class CreateListaChamadaComponent implements OnInit {
+
+
 
   dt_chamada: Date = new Date();
   chamada: Chamada = new Chamada();
@@ -27,16 +29,29 @@ export class CreateListaChamadaComponent implements OnInit {
 
   idAlunos: number[] = [];
 
+  idTurma: number = 0;
+
   constructor(private chamadaService: ChamadaService,
     private turmaService: TurmaService,
     private alunoService: AlunoService,
-    private router: Router) {
+    private router: Router,
+    private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
 
-    
+    if (!this.route.snapshot.params['id']) {
+      console.log("nulo?");
+      console.log(this.route.snapshot.params['id'])
+    }
+    else {
+      console.log("nao nulo");
+    }
+
+
+
+
 
     this.getTurmas();
     this.getAlunos();
@@ -58,6 +73,11 @@ export class CreateListaChamadaComponent implements OnInit {
     this.turmaService.getTurmaList().subscribe(data => {
       this.turmas = data;
       this.chamada.turma.id = this.turmas[0].id;
+      this.presencas = [];
+      for (let i = 0; i <= this.turmas[0].curso.carga_horaria_diaria; i++) {
+        this.presencas.push(i);
+      }
+
       this.getCadastrados();
     });
 
@@ -66,6 +86,9 @@ export class CreateListaChamadaComponent implements OnInit {
   private getAlunos() {
     this.alunoService.getAlunosList().subscribe(data => {
       this.alunos = data;
+
+
+
       for (let i = 0; i < this.alunos.length; i++) {
         this.alunos[i].presenca = this.turmas[0].curso.carga_horaria_diaria;
       }
@@ -85,7 +108,7 @@ export class CreateListaChamadaComponent implements OnInit {
     for (let i = 0; i < this.chamadasCadastrados.length; i++) {
 
       this.chamadasCadastrados[i].cadastro = false;
-      
+
       let aluno: Aluno = new Aluno();
       aluno = this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id)!;
 
@@ -93,7 +116,7 @@ export class CreateListaChamadaComponent implements OnInit {
       console.log(aluno);
 
       this.chamadasCadastrados[i].presenca = aluno.presenca;
-      
+
       console.log("Printando chamadas cadastrados atribuindo presença")
       console.log(this.chamadasCadastrados[i]);
 
@@ -154,7 +177,12 @@ export class CreateListaChamadaComponent implements OnInit {
 
     this.getCadastrados();
 
-    
+
+    this.presencas = [];
+    for (let i = 0; i <= turma.curso.carga_horaria_diaria; i++) {
+      this.presencas.push(i);
+    }
+    console.log(this.presencas);
 
     for (let i = 0; i < this.alunos.length; i++) {
       this.alunos[i].presenca = turma.curso.carga_horaria_diaria;
@@ -176,7 +204,7 @@ export class CreateListaChamadaComponent implements OnInit {
       console.log("Printando chamadas cadastrados");
       console.log(this.chamadasCadastrados);
       let aluno: Aluno = new Aluno();
-      
+
       console.log(this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id));
 
       aluno = this.alunos.find(x => x.id === this.chamadasCadastrados[i].aluno.id)!;
@@ -185,7 +213,7 @@ export class CreateListaChamadaComponent implements OnInit {
       console.log(aluno);
 
       this.chamadasCadastrados[i].presenca = aluno.presenca;
-      
+
       console.log("Printando chamadas cadastrados atribuindo presença")
       console.log(this.chamadasCadastrados[i]);
 

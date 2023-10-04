@@ -45,4 +45,9 @@ export class ChamadaService {
   deleteChamada(id: string): Observable<Object> {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
+
+  getChamadaByAluno(idAluno: number): Observable<Chamada[]> 
+  {
+    return this.httpClient.get<Chamada[]>(`${this.baseURL}/aluno/${idAluno}`);
+  }
 }

@@ -13,7 +13,7 @@ export class BlocosTurmasComponent implements OnInit {
 
   turmas: Turma[] = [];
 
-  constructor(private turmaService: TurmaService, private router: Router){
+  constructor(private turmaService: TurmaService, private router: Router) {
 
   }
 
@@ -28,16 +28,16 @@ export class BlocosTurmasComponent implements OnInit {
 
   }
 
-  private getturmas(){
+  private getturmas() {
 
     this.turmaService.getTurmaList().subscribe(data => {
 
-        this.turmas = data;
+      this.turmas = data;
 
-      })
+    })
   }
 
-  TelaEscolha(id: number){
+  TelaEscolha(id: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-primary',
@@ -45,7 +45,7 @@ export class BlocosTurmasComponent implements OnInit {
       },
       buttonsStyling: false
     })
-    
+
     swalWithBootstrapButtons.fire({
       icon: 'info',
       title: '<strong> <u> Opções: </u> </strong>',
@@ -55,11 +55,11 @@ export class BlocosTurmasComponent implements OnInit {
       cancelButtonText: 'Realizar Chamada',
     }).then((result) => {
       if (result.isConfirmed) {
-          this.router.navigate(['turma-details', id]);
+        this.router.navigate(['turma-details', id]);
       } else if (
         result.dismiss === Swal.DismissReason.cancel
       ) {
-        this.router.navigate(['create-lista-chamadas']);
+        this.router.navigate(['create-lista-chamadas/', id]);
       }
     })
   }

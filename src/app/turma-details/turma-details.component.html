@@ -13,3 +13,11 @@
         <label> <b> Nome do professor responsável pela Turma: </b></label> {{turma.professor.nome}}
     </div>
 </div>
+<div *ngFor="let cadastrados of chamadasCadastrados">
+    {{cadastrados.aluno.nome}}
+        <div>
+
+        </div>
+        {{cadastrados.presenca}}
+    <br>
+</div>

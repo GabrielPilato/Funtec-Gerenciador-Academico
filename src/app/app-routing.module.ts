@@ -53,6 +53,7 @@ const routes: Routes = [
   { path: 'chamada-details/:idTurma/:idAluno/:dt_chamada', component: ChamadaDetailsComponent },
   { path: 'chamada-options', component: ChamadaOptionsComponent },
   { path: 'create-lista-chamadas', component: CreateListaChamadaComponent },
+  { path: 'create-lista-chamadas/:idTurma', component: CreateListaChamadaComponent},
   { path: 'create-lista-chamadas-cadastro', component: CreateCadastroAlunoTurmaComponent },
   //blocos
   { path: 'blocos', component: BlocosTurmasComponent },
